@@ -1,0 +1,476 @@
+:root{
+    --red:#c0133e;
+    --black:#252a34;
+    --blue:#08d9d6;
+    --white:#eaeaea;
+    --title:35px;
+    --text:19px;
+ }
+ 
+ *{
+     margin:0;
+     padding: 0;
+     box-sizing: border-box;
+     
+ }
+ body{
+     background:  rgba(255, 255, 255, 0.705);
+     overflow-x: hidden;
+     font-family: 'Open Sans', sans-serif;
+     
+ }
+ 
+ /** Boton **/
+ .go-top{
+     position: fixed;
+     bottom: 100px;
+     right: -100%;
+     width: 45px;
+     height: 45px;
+     background: rgba(141, 141, 141, 0.589);
+     border:0px solid var(--red);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     z-index: 1000;
+     transition: 0.5s;
+ }
+ .go-top:hover{
+     background: var(--red);
+     color:#fff;
+     border: 2px solid var(--white);
+ }
+ .go-top:hover span{color:var(--white);}
+ 
+ .go-top > span{
+    font-size: 30px;
+    color: var(--black);
+ }
+ 
+ 
+ /** Menu **/
+ 
+ #header{
+     position: relative;
+     width: 100%;
+ }
+ .menu{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-image: linear-gradient(to right, rgba(255, 128, 119, 0.5) 0%, rgba(255, 133, 122, 0.5) 0%, rgba(255, 140, 127, 0.5) 21%, rgba(249, 144, 133, 0.5) 52%, rgba(207, 85, 107, 0.5) 78%, rgba(177, 42, 91, 0.5) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+ }
+ 
+ img{
+     vertical-align: top;
+   }
+ .menu .logo-box img {
+     
+     height: 60px;
+     margin: 0px 30px ;
+ }
+ 
+ .menu .logo-box img a{
+     text-decoration: none;
+     font-size: var(--title);
+     font-weight: 400;
+     color:var(--black);
+ }
+ 
+ .menu .list-container{margin-right: 20px;}
+ .menu .list-container ul{display: flex;}
+ .menu .list-container ul li{list-style: none;}
+ .menu .list-container ul li a{
+     text-decoration: none;
+     margin: 0px 10px;
+     padding:8px;
+     color: var(--black);
+     border-radius: 24px;
+     transition: 0.3s;
+     font-size: 19px;
+ }
+ .menu .list-container ul li a.active{
+     background: var(--red);
+     color:#fff;
+ }
+ .menu .list-container ul li a:hover{
+     background: var(--red);
+     color:#fff;
+ }
+ 
+ .btn-menu > .fa-bars{
+     display: none;
+ }
+ 
+ @media only screen and (max-width:900px){
+     .btn-menu > .fa-bars{
+         display: block;
+         position:absolute;
+         right: 30px;
+         top: 20px;
+         font-size: 28px;
+         color: var(--black);
+         transition: 0.5s;
+         cursor: pointer;
+     }
+     .btn-menu > .fa-times{color: var(--red);}
+     .btn-menu > .fa-bars:hover{color:var(--red);}
+     .menu .logo-box img{margin-left: 20px;}
+     .menu .list-container{
+         position: fixed;
+         top:60px;
+         left:-100%;
+         background:#fff;
+         width: 100%;
+         height: calc(100vh - 60px);
+     }
+     .menu .list-container .lists{
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         border-top:2px solid var(--red);
+     }
+     .menu .list-container ul li{
+         width: 90%;
+         border-bottom: 2px solid var(--black);
+         display: flex;
+         justify-content: center;
+     }
+     .menu .list-container ul li a{
+         font-size: 20px;
+         text-align: center;
+         padding:12px 0px;
+     }
+     .menu .list-container ul li a.active{
+         background: none;
+         color:var(--red);
+     }
+     .menu .list-container ul li a:hover{
+         background: none;
+         color:var(--red);
+     }
+ }
+ 
+ 
+ /** Imagen **/
+ 
+ .img-header{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+ }
+ .img-header .welcome{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(255, 128, 119, 0.5) 0%, rgba(255, 133, 122, 0.5) 0%, rgba(255, 140, 127, 0.5) 21%, rgba(249, 144, 133, 0.5) 52%, rgba(207, 85, 107, 0.5) 78%, rgba(177, 42, 91, 0.5) 100%), url(../img/fondo1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ }
+ .img-header .welcome h1{
+     font-size: 70px;
+     color:#fff;
+     font-weight: 450;
+ }
+ .img-header .welcome hr{
+     width: 400px;
+     height: 4px;
+     background: #fff;
+     border: none;
+     margin-top: 5px;
+ }
+ .img-header .welcome p{
+     font-size: 40px;
+     color: #fff;
+     margin-top: 20px;
+     font-weight: 450;
+ }
+
+ 
+ @media only screen and (max-width:773px ){
+     .img-header .welcome h1{font-size: 40px; text-align: center;}
+}
+ @media only screen and (max-width:590px){
+     .img-header .welcome h1{font-size: 40px;}
+     .img-header .welcome hr{width: 100px;}
+     .img-header .welcome p{font-size: 20px;}
+ }
+ 
+
+ 
+ /** SRI IESS MINISTERIO SUPER **/
+ 
+ div.noticias{
+     display: flex;
+     justify-content: center;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     margin-top: 60px;
+     margin-bottom: 60px;
+ }
+ div.noticias div{
+     width: 200px;
+ }
+ 
+ div.noticias div img{
+     width: 100%;
+     
+ }
+
+
+/** Formulario**/
+.footer2{
+    background-image: linear-gradient(to right, rgba(255, 128, 119, 0.5) 0%, rgba(255, 133, 122, 0.5) 0%, rgba(255, 140, 127, 0.5) 21%, rgba(249, 144, 133, 0.5) 52%, rgba(207, 85, 107, 0.5) 78%, rgba(177, 42, 91, 0.5) 100%), url(../img/teclado.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    background-blend-mode: soft-light;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+	height: 100vh;
+  
+
+}
+.footer2 .boxForm{
+	width: auto;
+	height: auto;
+	padding:50px;
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 10px;
+}
+.boxForm h2{
+	font-size: 50px;
+	color: #fff;
+	font-weight: 300;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+}
+.boxForm label{
+	color: #fff;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.boxForm > input{
+	margin:10px 0px 20px 0px;
+	padding:0px 20px;
+	width: 700px;
+	height: 40px;
+	border-radius: 24px;
+	outline: none;
+	border-radius: 2px solid var(--red);
+	font-size: 15px;
+	background: #c9c9c99d;
+}
+.boxForm input:focus{
+	background:rgb(255, 255, 255);
+	color: #000;
+	transition: 0.25s;
+}
+.boxForm input::placeholder{
+	color: #fff;
+}
+.boxForm textarea{
+	width: 700px;
+    height: 120px;
+    margin:10px 0px 20px 0px;
+    border-radius: 24px;
+    outline: none;
+    border:2px solid #fff;
+    font-size: 15px;
+    background: #c9c9c99d;
+    padding:10px;
+}
+.boxForm textarea:focus{
+	background: #fff;
+	color: #000;
+	transition: 0.25s;
+}
+.boxForm textarea::placeholder{
+	color: #fff;
+}
+.boxForm #send{
+	width: 120px;
+	height: 50px;
+	border-radius: 24px;
+	outline: none;
+	border-radius: 2px solid #574b90;
+	background: var(--red);
+	cursor: pointer;
+	transition: 0.25s;
+}
+.boxForm #send a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 17px;
+	text-transform: uppercase;
+}
+.boxForm #send:hover{
+	border:2px solid #fff;
+	background: #f39191;
+} 
+
+@media only screen and (max-width: 800px){
+
+  footer2{margin-top: -200px;}
+  footer2 .boxForm{width: 95%;}
+  .boxForm input{width: 100%;}
+  .boxForm textarea{width: 100%;}
+  .boxForm h2{font-size: 40px;}
+}
+
+ 
+/* Pie Pagina */
+
+footer {
+    background-image: linear-gradient(to right, rgba(255, 128, 119, 0.5) 0%, rgba(255, 133, 122, 0.5) 0%, rgba(255, 140, 127, 0.5) 21%, rgba(249, 144, 133, 0.5) 52%, rgba(207, 85, 107, 0.5) 78%, rgba(177, 42, 91, 0.5) 100%), url(../img/teclado.jpg);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px ;
+    overflow: hidden; 
+    flex-wrap: wrap;
+    margin: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    background-blend-mode: soft-light;   
+}
+
+.partFooter {
+    width: 20%;
+    text-align: center;
+}
+
+.partFooter h4 {
+    color: #f6f9ff;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.partFooter a {
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    transition: color .3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.partFooter a:hover {
+    color: var(--red);
+}
+
+.social-media i {
+    font-size: 20px;
+    display: inline-block;
+    color: #adb6c7;
+    border: 1px solid #adb6c7;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    line-height: 36px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: all ease-in-out .3s;
+    margin-right: 5px;
+}
+
+.social-media i:hover {
+    color: rgb(49, 48, 48);
+    background-color: var(--red);
+    border-color: var(--red);
+}
+
+@media screen and (max-width:800px) {
+footer {
+    justify-content: space-evenly;
+}
+.partFooter {
+    width: 40%;
+    margin-bottom: 40px;
+}
+
+}
+
+@media screen and (max-width:600px) {
+    .partFooter {
+        width: 95%;
+        margin-bottom: 40px;
+    }
+}
+ 
+ 
+ /** Pie Pagina **/
+ .footer{
+     position: relative;
+     width: 100%;
+     height: 100%;
+     background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+ }
+ 
+ .footer .footer-text{
+     position:absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 60px;
+     background:rgba(0,0,0,0.8);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-top: 2px solid #fff;
+ }
+ 
+ .footer .footer-text p{
+     font-size: 17px;
+     color: #fff;
+ }
+ 
+ 
+ @media only screen and (max-width:590px){
+     
+     .footer .footer-text{width: 100%; padding: 0px 30px;}
+     .footer .footer-text p{font-size: 17px;}
+ }
+
+ .appwhatsapp {
+     position: fixed;
+     right: 26px;
+     bottom: 100px;
+     width: 60px;
+     z-index: 1000;
+}
+.appwhatsapp img {
+    width: 100%;
+    height: auto;
+    
+}
+
+ 
