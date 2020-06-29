@@ -481,7 +481,7 @@ footer {
      .footer .footer-text p{font-size: 17px;}
  }
 
-.appwhatsapp {
+ .appwhatsapp {
      position: fixed;
      right: 26px;
      bottom: 100px;
@@ -490,6 +490,7 @@ footer {
 }
 .appwhatsapp img {
     width: 100%;
-    height: auto; 
+    height: auto;
+    
 }
  
